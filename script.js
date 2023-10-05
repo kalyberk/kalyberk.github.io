@@ -65,6 +65,7 @@ window.addEventListener('resize', () => {
 const clock = new THREE.Clock()
 
 let animationFinished = false
+const animationDuration = 1 // seconds
 
 function animate() {
     requestAnimationFrame(animate)
@@ -74,7 +75,7 @@ function animate() {
 
     renderer.render(scene, camera)
 
-    if (!animationFinished && elapsedTime > 3.14) {
+    if (!animationFinished && elapsedTime > animationDuration) {
         animationFinished = true
 
         const animationContainer = document.getElementById('animation-ctn')
@@ -90,7 +91,7 @@ function animate() {
         textContainer.style.pointerEvents = 'auto'
     }
 
-    if (animationFinished && elapsedTime > 10) {
+    if (animationFinished && elapsedTime > (animationDuration + 5)) {
         camera.remove()
         scene.remove(sphere)
         renderer.dispose()
