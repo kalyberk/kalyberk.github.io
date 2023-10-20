@@ -12,7 +12,7 @@ var wh = window.innerHeight
 
 var renderer = new THREE.WebGLRenderer()
 renderer.setSize(ww, wh)
-renderer.setClearColor('black', 0.2)
+renderer.setClearColor('beige', 0.1)
 const animationContainer = document.getElementById('animation-ctn')
 animationContainer.appendChild(renderer.domElement)
 
